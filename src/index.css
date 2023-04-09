@@ -101,7 +101,7 @@ footer .col-2 {
     max-width: 32rem !important;
   }
 }
-.backend-error,
+.backend-message,
 .err {
   height: 20px;
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./Register.module.css";
 import Path from "../../components/Path";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import $ from "jquery";
 
 export default function Register() {
+  let navigator = useNavigate();
   let user = {
     name: "",
     email: "",
@@ -21,10 +22,16 @@ export default function Register() {
         "https://route-ecommerce.onrender.com/api/v1/auth/signup",
         user
       );
-      console.log(data);
+      if (data.message === "success") {
+        $(".backend-message ").addClass("text-success");
+        $(".backend-message ").html(` <span>&bull;</span> Registration Done `);
+        navigator("/login");
+      }
     } catch (error) {
       console.log(error.response.data.message);
-      $(".backend-error ").html(
+
+      $(".backend-message ").addClass("text-danger");
+      $(".backend-message ").html(
         ` <span>&bull;</span> ${error.response.data.message}`
       );
 
@@ -233,7 +240,7 @@ export default function Register() {
               </p>
             </div>
 
-            <p className="backend-error text-danger text-center mb-2"></p>
+            <p className="backend-message text-center mb-2"></p>
 
             <div className="form-group my-2 col-12 text-center">
               <button type="submit" className="btn btn-danger rounded-1 fs-5">

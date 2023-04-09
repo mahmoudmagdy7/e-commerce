@@ -1,27 +1,39 @@
 import React from "react";
-import styles from "./Login.module.css";
 import Path from "../../components/Path";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
+import $ from "jquery";
+
 export default function Login() {
+  let navigator = useNavigate();
   let user = {
-    name: "",
     email: "",
-    phone: "",
     password: "",
-    rePassword: "",
   };
 
-  async function registerNewUser(user) {
+  async function loginUser(user) {
     try {
       let { data } = await axios.post(
-        "https://route-ecommerce.onrender.com/api/v1/auth/signup",
+        "https://route-ecommerce.onrender.com/api/v1/auth/signin",
         user
       );
-      console.log(data);
+      if (data.message === "success") {
+        $(".backend-message ").addClass("text-success");
+        $(".backend-message ").html(` <span>&bull;</span> Registration Done `);
+        navigator("/home");
+      }
     } catch (error) {
-      console.log(error.response.data.errors.msg);
+      console.log(error.response.data.message);
+
+      $(".backend-message ").addClass("text-danger");
+      $(".backend-message ").html(
+        ` <span>&bull;</span> ${error.response.data.message}`
+      );
+
+      setTimeout(() => {
+        $(".backend-error").html("");
+      }, 3000);
     }
   }
 
@@ -30,26 +42,11 @@ export default function Login() {
 
     onSubmit: function (user) {
       console.log(user);
-      registerNewUser(user);
+      loginUser(user);
     },
 
     validate: function (user) {
       let errors = {};
-
-      // handling the name
-      if (!user.name) {
-        errors.name = "Name is required";
-      } else if (user.name.length < 2) {
-        errors.name = "Name min length must be 2 characters";
-      }
-
-      // handling the phone number
-
-      if (!user.phone) {
-        errors.phone = "Phone number is required";
-      } else if (!user.phone.match(/^(02)?01[0125][0-9]{8}$/)) {
-        errors.phone = "Invalid phone number";
-      }
 
       // handling the email address
       if (!user.email) {
@@ -72,12 +69,6 @@ export default function Login() {
           "Password at least 8 characters 1 number 1 lowercase and uppercase letter  1 special character ";
       }
 
-      if (!user.rePassword) {
-        errors.rePassword = "Re-enter password is required";
-      }
-      if (user.password !== user.rePassword) {
-        errors.rePassword = "Passwords doesn't not match";
-      }
       return errors;
     },
   });
@@ -86,66 +77,13 @@ export default function Login() {
       <Path />
       <section>
         <div className="container text-center">
-          <h2>Register</h2>
+          <h2>Login</h2>
           <p className="lead">Best place to buy and sell digital products</p>
 
           <form
             onSubmit={formik.handleSubmit}
-            className="register-form border rounded-1 text-start my-4 border-1 p-4 row bg-white m-auto"
+            className="login-form border rounded-1 text-start my-4 border-1 p-4 row bg-white m-auto"
           >
-            <div className="form-group my-2 col-6 d-flex flex-column ">
-              <label htmlFor="firstName">
-                Name<span className="text-danger fs-5 ">*</span>
-              </label>
-
-              <input
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                value={formik.values.name}
-                id="firstName"
-                name="name"
-                placeholder="Enter your name"
-                type="text"
-                className="form-control rounded-1 w-100"
-              />
-
-              <p className="my-0 text-danger err">
-                {formik.touched.name && formik.errors.name ? (
-                  <div>
-                    <span>&bull;</span>
-                    <span> {formik.errors.name} </span>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </p>
-            </div>
-
-            <div className="form-group my-2 col-6 d-flex flex-column ">
-              <label htmlFor="phoneNumber">
-                Phone Number <span className="text-danger fs-5 ">*</span>
-              </label>
-              <input
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                value={formik.values.phone}
-                id="phoneNumber"
-                name="phone"
-                placeholder="Enter your phone number"
-                type="text"
-                className="form-control rounded-1 w-100"
-              />
-              <p className="my-0 text-danger err">
-                {formik.touched.phone && formik.errors.phone ? (
-                  <div>
-                    <span>&bull;</span>
-                    <span> {formik.errors.phone} </span>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </p>
-            </div>
             <div className="form-group my-2 col-12 d-flex flex-column ">
               <label htmlFor="email">
                 Email Address <span className="text-danger fs-5 ">*</span>
@@ -172,7 +110,7 @@ export default function Login() {
               </p>
             </div>
 
-            <div className="form-group my-2 col-6 d-flex flex-column ">
+            <div className="form-group my-2 col-12 d-flex flex-column ">
               <label htmlFor="password">
                 Password <span className="text-danger fs-5 ">*</span>
               </label>
@@ -197,48 +135,20 @@ export default function Login() {
                 )}
               </p>
             </div>
-
-            <div className="form-group my-2 col-6 d-flex flex-column ">
-              <label htmlFor="rePassword">
-                Re-password <span className="text-danger fs-5 ">*</span>
-              </label>
-              <input
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                value={formik.values.rePassword}
-                id="rePassword"
-                name="rePassword"
-                placeholder="Enter your password again"
-                type="Password"
-                className="form-control w-100 rounded-1"
-              />
-              <p className="my-0 text-danger err">
-                {formik.touched.rePassword && formik.errors.rePassword ? (
-                  <div>
-                    <span>&bull;</span>
-                    <span> {formik.errors.rePassword} </span>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </p>
-            </div>
+            <p className="backend-message text-center mb-2"></p>
 
             <div className="form-group my-2 col-12 text-center">
-              <button
-                type="submit"
-                className="btn btn-danger rounded-1 fs-5 mt-4"
-              >
-                Register
+              <button type="submit" className="btn btn-danger rounded-1 fs-5">
+                Login
               </button>
             </div>
             <p className="text-center mt-3">
               Don you have account ?
               <Link
-                to="/login"
+                to="/register"
                 className="text-danger text-decoration-none ms-2 "
               >
-                Login
+                Register
               </Link>
             </p>
           </form>
