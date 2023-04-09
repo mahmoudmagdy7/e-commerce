@@ -1,6 +1,6 @@
 /*============ libraries ============== */
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 /************** styling ************/
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'
@@ -16,7 +16,6 @@ import Layout from './Pages/Layout/Layout';
 
 
 function App() {
-  console.log($('a'));
   const router = createBrowserRouter([
 
     {

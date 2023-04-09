@@ -7,6 +7,10 @@ export default function Navbar() {
   function toggleNav() {
     let menu = document.querySelector(".user-menu");
     menu.classList.toggle("active-menu");
+    let closeLayer = document.querySelector(".close-layer");
+    closeLayer.style.display === "block"
+      ? (closeLayer.style.display = "none")
+      : (closeLayer.style.display = "block");
   }
 
   return (
@@ -35,6 +39,7 @@ export default function Navbar() {
                 <button onClick={toggleNav} className="btn icon ">
                   <i className="fa-regular fa-user"></i>
                 </button>
+                <div onClick={toggleNav} className="close-layer"></div>
                 <ul className="user-menu text-start position-absolute">
                   <Link
                     className="nav-link py-1 active"

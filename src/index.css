@@ -6,6 +6,10 @@
 body {
   background-image: url(../src/assets/images/background-3.png);
 }
+
+/* -------- layouts ------- */
+
+/* Layout ---> navbar  */
 nav {
   background-color: #fff;
 }
@@ -17,14 +21,16 @@ nav {
   right: 20px;
   font-size: 1rem;
 }
+
 nav .user-menu {
-  top: 50px;
-  right: 12px;
-  border: solid 1px #ddd;
-  box-shadow: 0 0 9px 0px #00000017;
-  width: 100px;
-  z-index: 88888 !important;
+  overflow: hidden;
   background-color: #fff;
+  height: 0;
+  margin: 0;
+  right: 12px;
+  border: none;
+  z-index: 88888 !important;
+  width: 120px !important;
 }
 nav .user-menu .nav-link:not(:last-child) {
   border-bottom: solid 1px #ddd;
@@ -40,12 +46,21 @@ nav .user-menu .nav-link:not(:last-child) {
 .navbar-nav .basket-badge {
   top: 5px !important;
 }
-
-/* @media screen and (max-width: 980px) {
-  .uppernav {
-    position: absolute;
-  }
-} */
+.active-menu {
+  height: auto !important;
+  padding: 5px 10px !important;
+  margin: 0;
+  border: solid #d1d1d1db 1px !important;
+}
+.close-layer {
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: none;
+}
+/* Layout ---> footer  */
 footer {
   color: #fff;
   background-color: #222222;
@@ -65,29 +80,28 @@ footer .col-2 {
   border-radius: 4px !important;
 }
 
-nav .user-menu {
-  overflow: hidden;
-  height: 0;
-  margin: 0;
-  border: none;
-  width: 120px !important;
-}
-.active-menu {
-  height: auto !important;
-  padding: 5px 10px !important;
-  margin: 0;
-  border: solid #d1d1d1db 1px !important;
-}
-
+/* ----------- general ----------- */
 .form-control:focus {
   color: #333639 !important;
   border-color: #33363922 !important;
   outline: 0;
   box-shadow: none !important;
 }
+.breadcrumb {
+  background-color: rgb(247, 247, 247) !important;
+  border-bottom: solid 1px rgb(226, 226, 226);
+}
 
+/* -------- queries ------ */
 @media screen and (min-width: 768px) {
   .register-form {
-    width: 70% !important;
+    max-width: 70% !important;
   }
+  .login-form {
+    max-width: 32rem !important;
+  }
+}
+.backend-error,
+.err {
+  height: 20px;
 }
