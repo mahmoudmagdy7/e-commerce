@@ -13,6 +13,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Notfound from './Pages/Notfound/Notfound';
 import Layout from './Pages/Layout/Layout';
+import ProductDetails from './Pages/ProductDetails/ProductDetails';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       path: '', element: <Layout />, children: [
         { path: '', element: <Home /> },
         { path: 'home', element: <Home /> },
+        { path: 'product-details/:id', element: <ProductDetails /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
       ]
