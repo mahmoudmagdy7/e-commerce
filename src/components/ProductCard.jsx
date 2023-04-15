@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProductCard({ product }) {
   return (
     <>
-      <div className="col-lg-4 col-xl-3 col-md-6 p-3">
+      <div className="col-lg-4 col-xl-3 col-md-6 col-sm-6 p-3">
         <Link
           to={`/product-details/${product.id}`}
           className="text-decoration-none"

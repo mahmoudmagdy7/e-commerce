@@ -3,7 +3,7 @@ import React from "react";
 export default function ItemsLoading() {
   return (
     <div className="row  g-3">
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -23,7 +23,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -43,7 +43,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -63,7 +63,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -83,7 +83,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -103,7 +103,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -123,7 +123,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -143,7 +143,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -163,7 +163,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -183,7 +183,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -203,7 +203,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"
@@ -223,7 +223,7 @@ export default function ItemsLoading() {
         </div>
       </div>
 
-      <div className="col-lg-3 col-md-4 col-sm-12 " aria-hidden="true">
+      <div className="col-lg-3 col-md-4 col-sm-6 " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
             className="placeholder placeholder-wave col-11 img-block d-block mx-auto mt-3"

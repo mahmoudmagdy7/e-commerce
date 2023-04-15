@@ -8,7 +8,7 @@ export default function Path() {
       <div className="breadcrumb py-3">
         <div className="container">
           <div className="current">
-            <h3 className=" text-capitalize fs-5">
+            <h3 className=" text-capitalize fs-5 overflow-hidden">
               {currentLocation.pathname.slice(1)}
             </h3>
           </div>

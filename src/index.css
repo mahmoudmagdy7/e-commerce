@@ -188,9 +188,14 @@ footer .col-2 {
   }
 }
 /* tablets  */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   aside {
     display: none;
+  }
+}
+@media screen and (max-width: 590px) {
+  .col-sm-6 {
+    width: 50% !important;
   }
 }
 

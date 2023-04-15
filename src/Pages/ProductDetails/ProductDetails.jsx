@@ -35,13 +35,13 @@ export default function ProductDetails() {
             <div className="col-lg-9 bg-white col-md-12 border-main rounded-4 py-3">
               <div className="row  rounded-4">
                 <div className="col-md-6">
-                  <figure className="row justify-content-center">
+                  <figure className="row justify-content-center ">
                     <img
                       src={product.imageCover}
                       alt=""
                       className="w-75 col-12 "
                     />
-                    <figure className="d-flex col-12 justify-content-center">
+                    <figure className="d-flex col-12 justify-content-center overflow-scroll">
                       {product.images
                         ? product.images.map((image) => {
                             return (

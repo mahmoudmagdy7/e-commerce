@@ -30,7 +30,7 @@ export default function Home() {
       </header> */}
 
       <section className="container my-5">
-        <div className="row">
+        <div className="row p-3">
           <aside className="col-3 ">
             <Categories />
           </aside>
