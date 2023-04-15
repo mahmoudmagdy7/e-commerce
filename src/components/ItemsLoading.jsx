@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ItemsLoading() {
   return (
-    <div className="row row-cols-4 g-3">
+    <div className="row row-lg-cols-4 row-cols-md-3 row-cols-sm-1 g-3">
       <div className="col " aria-hidden="true">
         <div className=" rounded-2 bg-light  overflow-hidden">
           <div
