@@ -2,62 +2,6 @@ import React, { useEffect } from "react";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 export default function ProductCard({ product }) {
-  let rate = product.ratingsAverage;
-  function getRating() {
-    // console.log(rate);
-    // console.log(product.ratingsAverage);
-    let productRate = "rate";
-    if (rate < 2) {
-      productRate = `
-  <i class=" fas fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  
-  
-  `;
-    } else if (rate >= 2 && rate < 3) {
-      productRate = `
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  
-  `;
-      // <span>(${product.ratingsAverage})</span>
-    } else if (rate >= 3 && rate < 4) {
-      productRate = `
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  
-  `;
-    } else if (rate === 4) {
-      productRate = `
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class="fa-regular fa-star text-main"></i>
-  
-  `;
-    } else {
-      productRate = `
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  <i class=" fas fa-star text-main"></i>
-  
-  `;
-    }
-    return productRate;
-  }
-
   return (
     <>
       <div className="col-lg-4 col-xl-3 col-md-6 p-3">
@@ -80,7 +24,7 @@ export default function ProductCard({ product }) {
                 {product.title.split(" ").slice(0, 2).join(" ")}. . .
               </p>
               <div className="rate d-flex">
-                {$(this).html(getRating())}
+                <i class=" fas fa-star text-warning"></i>
                 {product.ratingsAverage}
               </div>
               <div className="price mt-2">

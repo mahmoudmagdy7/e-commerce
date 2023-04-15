@@ -15,11 +15,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <div className="uppernav d-flex ">
-        <div>hello</div>
-        <div>second</div>
-        <div>theard</div>
-      </div> */}
       <nav className="navbar py-3 border">
         <div className=" container-fluid container-lg m-auto row w-100  flex-column-reverse flex-lg-row">
           <div className="d-flex align-items-center col-lg-8 justify-content-between ">
