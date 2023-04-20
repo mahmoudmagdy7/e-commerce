@@ -8,9 +8,9 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-body {
+/* body {
   background-image: url(../src/assets/images/background-3.png);
-}
+} */
 /* -------- colors ------- */
 .bg-main {
   background-color: var(--main-bg-color);
@@ -176,6 +176,14 @@ footer .col-2 {
 .actions input {
   width: 40px;
   text-align: center;
+}
+/* cart  */
+
+.cart-item-image {
+  width: 45px;
+}
+.cart .table td {
+  vertical-align: middle;
 }
 /* -------- queries ------ */
 /* desktops  */

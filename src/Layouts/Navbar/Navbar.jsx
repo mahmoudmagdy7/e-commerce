@@ -57,7 +57,13 @@ export default function Navbar() {
                   2<span class="visually-hidden">unread messages</span>
                 </span>
               </button>
-              <button className="btn basket d-flex align-items-center justify-content-center ">
+
+              <button
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                className="btn basket d-flex align-items-center justify-content-center "
+              >
                 <img
                   src={basket}
                   alt="shopping basket"

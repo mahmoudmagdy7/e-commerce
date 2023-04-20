@@ -25,10 +25,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <header>
-        <div className="container">header</div>
-      </header> */}
-
       <section className="container my-5">
         <div className="row p-3">
           <aside className="col-3 ">
